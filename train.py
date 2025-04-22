@@ -23,12 +23,13 @@ scaler = MinMaxScaler()
 # scaler = StandardScaler()
 seq_len =  545 # should be 18 secs face action unit data
 n_features = 17
-AU = sio.loadmat(f'data/AUAll2.mat')
-print(AU[f'AUAll1'].shape)
-AU1=AU[f'AUAll1']
+AU = sio.loadmat(f'AUAll2.mat')
 AU2=AU[f'AUAll2']
+AU = sio.loadmat(f'AUAll1.mat')
+AU1=AU[f'AUAll1']
+print(AU[f'AUAll1'].shape)
 print(AU1.shape)
-temp=sio.loadmat(f'data/info12.mat');
+temp=sio.loadmat(f'info12.mat');
 info=temp[f'info12']
 
 AU1 = scaler.fit_transform(AU1)
